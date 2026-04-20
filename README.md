@@ -80,4 +80,5 @@ deployment jednoduché webové aplikace
 Rychlé spuštění:
 
 py -m pip install -r requirements.txt
-streamlit run src/app.py
+cd src
+py -m streamlit run app.py
