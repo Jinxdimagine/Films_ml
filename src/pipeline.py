@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 from datetime import datetime
-TMDB_API_KEY = "58ec81c997837a91a219ed2b46e63240"
 def create_features(df, training=True):
     df = df.copy()
 
