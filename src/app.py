@@ -8,7 +8,7 @@ from api import get_movie
 model = joblib.load("models/xgb_model.pkl")
 features = joblib.load("models/features.pkl")
 
-st.title("🎬 TMDB Movie Rating Predictor")
+st.title(" TMDB Movie Rating Predictor")
 
 # input
 movie_id = st.text_input("Enter TMDB Movie ID")
