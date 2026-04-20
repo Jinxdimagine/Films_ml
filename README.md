@@ -42,8 +42,7 @@ cd cesta/k/projektu/Films_ml/src
 
 --------------------------------------------------
 4. Nainstaluj závislosti
-
-pip install -r ../requirements.txt
+py -m pip install -r requirements.txt
 
 --------------------------------------------------
 
