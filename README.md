@@ -1,101 +1,83 @@
-Movie Rating Predictor 
+Movie Rating Predictor
 
 Tento projekt slouží k predikci hodnocení filmů pomocí strojového učení.
 
 Aplikace načítá data o filmu z TMDB API a pomocí natrénovaného modelu (XGBoost) odhaduje jeho výsledné hodnocení.
 
---------------------------------------------------
+Funkce aplikace:
 
- Funkce aplikace
+Zadání filmu pomocí TMDB ID
+Automatické načtení dat z TMDB API
+Feature engineering (stejný jako při trénování modelu)
+Predikce hodnocení filmu pomocí ML modelu
+Zobrazení skutečných dat filmu
 
-- Zadání filmu pomocí TMDB ID
-- Automatické načtení dat z API
-- Feature engineering (stejný jako při trénování)
-- Predikce hodnocení filmu
-- Zobrazení skutečných dat filmu
+Použité technologie:
 
---------------------------------------------------
+Python
+Streamlit (webová aplikace)
+XGBoost (model strojového učení)
+TMDB API (zdroj dat)
 
-Použité technologie
+Instalace (bez IDE):
 
-- Python
-- Streamlit (webová aplikace)
-- XGBoost (model strojového učení)
-- TMDB API (zdroj dat)
-
---------------------------------------------------
-
-
-⬇️ Instalace (bez IDE)
-
-1. Stáhni projekt
-- stáhni ZIP soubor projektu
-- rozbal ho do libovolné složky
-
---------------------------------------------------
-
-2. Otevři příkazovou řádku (CMD / PowerShell)
-
+Stáhni projekt
+Stáhni ZIP soubor projektu a rozbal ho do libovolné složky.
+Otevři příkazovou řádku (CMD / PowerShell)
 Přejdi do složky projektu:
 
 cd cesta/k/projektu/Films_ml/src
 
---------------------------------------------------
-4. Nainstaluj závislosti
+Nainstaluj závislosti:
+
 py -m pip install -r requirements.txt
 
---------------------------------------------------
+Nastavení API klíče
 
-5. Nastav API klíč
+V projektu se používá konfigurační soubor config.py, který obsahuje API klíč pro TMDB.
 
-V souboru app.py změň:
+Vytvoř soubor config.py a vlož do něj:
 
-API_KEY = "TVUJ_API_KLIC"
+TMDB_API_KEY = "TVUJ_API_KLIC"
 
-Na svůj skutečný API klíč z TMDB.
+👉 Nahraď svůj skutečný API klíč z TMDB.
 
---------------------------------------------------
+V souboru app.py se klíč importuje takto:
 
-6. Spusť aplikaci
+from config import TMDB_API_KEY
+
+Spusť aplikaci:
 
 streamlit run app.py
 
---------------------------------------------------
+Otevři v prohlížeči
+Po spuštění se v terminálu zobrazí odkaz (např. http://localhost:8501
+), který otevři v prohlížeči.
 
-7. Otevři v prohlížeči
+Jak aplikace funguje:
 
-link z terminalu
---------------------------------------------------
+Uživatel zadá TMDB ID filmu.
+Aplikace zavolá TMDB API a načte data o filmu.
+Data se převedou na feature pomocí stejné pipeline jako při trénování modelu.
+Model XGBoost provede predikci hodnocení.
+Výsledek se zobrazí uživateli spolu se základními informacemi o filmu.
 
-🧠 Jak aplikace funguje
+Omezení:
 
-1. Uživatel zadá ID filmu
-2. Aplikace zavolá TMDB API
-3. Data se převedou na feature pomocí pipeline
-4. Model provede predikci
-5. Výsledek se zobrazí uživateli
+Model pracuje pouze s numerickými daty
+Nezohledňuje kvalitu filmu (například scénář nebo herecké výkony)
+Přesnost závisí na kvalitě vstupních dat
 
---------------------------------------------------
-
-⚠️ Omezení
-
-- Model pracuje pouze s numerickými daty
-- Nezohledňuje kvalitu filmu (scénář, herce apod.)
-- Přesnost závisí na kvalitě dat
-
---------------------------------------------------
-
-👨‍💻 Autor
+Autor:
 
 Projekt byl vytvořen jako školní práce zaměřená na:
-- sběr dat
-- zpracování dat
-- strojové učení
-- deployment aplikace
 
---------------------------------------------------
+sběr dat
+zpracování dat
+strojové učení
+deployment jednoduché webové aplikace
 
-▶️ Rychlé spuštění
+Rychlé spuštění:
 
-pip install -r requirements.txt
+py -m pip install -r requirements.txt
 streamlit run src/app.py
